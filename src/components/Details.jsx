@@ -25,13 +25,16 @@ const Details = (props) => {
              <div>
                  <h1>This user has Following details</h1>
                  <ul>
-                     {
-                         //here error we're getting is that setState is setting obj in user 
-                         //and .map() method can't apply on objects so we need a way to somehow add obj to array
-                         //so we can apply map on it
-                        // user.map(f => {})
+                    {
+                        [user].map(use => (
+                            <div>
+                            <li key={use.id}>Name of user is {use.name}</li>
+                            <li>email of user is {use.email}</li>
+                            <li>username of user is {use.username}</li>
+                            </div>
+                        ))
                     }
-                 </ul>
+                </ul>
              </div>
          </div>
  
